@@ -54,8 +54,19 @@ for i in names:
 #3-2. Greetings: Start with the list you used in Exercise 3-1, but instead of just printing each person’s name, print a message to them.
 #The text of each message should be the same, but each message should be personalized with the person’s name.
 
-
+#uso la lista dell'es 3-1
 for i in names:
     print("ciao,",i, "sei bello")
+
+#3-3. Your Own List: Think of your favorite mode of transportation, such as a motorcycle or a car, and make a list that stores several examples. 
+#Use your list to print a series of statements about these items, such as “I would like to own a Honda motorcycle.”
+transports=["audi","ford","bmw","fiat"]
+for i in transports:
+    print("vorrei comprare un'auto",i)
+    print("la mia marca preferita di auto è: ",i)
+
+#3-4. Guest List: If you could invite anyone, living or deceased, to dinner, who would you invite? 
+#Make a list that includes at least three people you’d like to invite to dinner. 
+#Then use your list to print a message to each person, inviting them to dinner.
 
 
