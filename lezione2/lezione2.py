@@ -29,3 +29,16 @@ name: str= "Albert Einstein"
 quote: str= "A person who never made a mistake never tried anything new."
 print(f"{name} once said, \"{quote}\" ")
 
+#2-6. Famous Quote 2: Repeat Exercise 2-5, but this time, represent the famous person’s name using a variable called famous_person. 
+#Then compose your message and represent it with a new variable called message. Print your message. 
+
+famous_person: str="Albert Einstein"
+message: str= f"{famous_person} once said, \"{quote}\""
+print(message)
+
+#2-8. File Extensions: Python has a removesuffix() method that works exactly like removeprefix(). 
+#Assign the value 'python_notes.txt' to a variable called filename. 
+#Then use the removesuffix() method to display the filename without the file extension, like some file browsers do.
+
+filename: str= "python_notes.txt"
+print(filename.removesuffix(".txt"))
