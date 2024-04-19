@@ -84,10 +84,12 @@ for i in guest_list:
 guest_list: list=["Alessandro Borghi","Leonardo Di Caprio","Beyonce"]
 for i in guest_list:
     print(f"ciao, {i} vuoi venire a cena con me?")
-print(f"{i[1]} non può venire alla cena")
+print(f"{guest_list[1]} non può venire alla cena")
 guest_list[1]= "Van Gogh"
 for i in guest_list:
     print (f"{i}, ti andrebbe di cenare con me?")
+
+
 
 
 
