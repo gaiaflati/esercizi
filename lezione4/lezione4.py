@@ -26,7 +26,7 @@ def check_value(x:int):
 
 check_value(int(input("inserisci un numero")))
 
-
+#Exercise 2
 #Write a function check_length(), which takes a string as an argument.
 #Using if / else, check if the length of the string is bigger, smaller, or equal to 10 characters
 
@@ -38,3 +38,12 @@ def check_length(x: str):
     else:
         return ("la stringa è = a 10 caratteri")
 print(check_length(input("inserisci una stringa")))
+
+#Exercise 3
+#Write a function print_numbers(), which takes a list of numbers as argument.
+#Using a for loop, print each number one by on
+
+def print_numbers(list:list):
+    for i in list:
+        print(i)
+print_numbers([2,5,7,3,8,10,4])
