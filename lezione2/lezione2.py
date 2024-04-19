@@ -80,7 +80,6 @@ for i in guest_list:
 #• Modify your list, replacing the name of the guest who can’t make it with the name of the new person you are inviting.
 #• Print a second set of invitation messages, one for each person who is still in your list.
 
-
 guest_list: list=["Alessandro Borghi","Leonardo Di Caprio","Beyonce"]
 for i in guest_list:
     print(f"ciao, {i} vuoi venire a cena con me?")
@@ -88,6 +87,24 @@ print(f"{guest_list[1]} non può venire alla cena")
 guest_list[1]= "Van Gogh"
 for i in guest_list:
     print (f"{i}, ti andrebbe di cenare con me?")
+
+#3-6. More Guests: You just found a bigger dinner table, so now more space is available. Think of three more guests to invite to dinner.
+#• Start with your program from Exercise 3-4 or 3-5. Add a print() call to the end of your program, informing people that you found a bigger table.
+#• Use insert() to add one new guest to the beginning of your list.
+#• Use insert() to add one new guest to the middle of your list.
+#• Use append() to add one new guest to the end of your list.
+#• Print a new set of invitation messages, one for each person in your list.    
+
+guest_list: list=["Alessandro Borghi","Leonardo Di Caprio","Beyonce"]
+for i in guest_list:
+    print(f"ciao, {i} vuoi venire a cena con me?")
+print("ho trovato un ristorante con un tavolo più grande")
+guest_list.insert(0,"pippo")
+guest_list.insert(2,"Pluto")
+guest_list.append("topolino")
+for i in guest_list:
+    print(f"ciao, {i} abbiamo cambiato posto per la cena, ci vediamo alle 20")
+
 
 
 
