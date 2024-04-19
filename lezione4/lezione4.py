@@ -7,3 +7,34 @@
 def substract(x,y):
     return x-y
 print(substract(4,7))
+
+#è la stessa cosa di:
+#out= substract(x,y)
+
+
+#Write a function check_value(), which takes a number as an argument.
+#Using if / else, the function should print whether the number is bigger, smaller, or equal to 5.
+
+def check_value(x:int):
+    if x>5:
+        print("il numero è Maggiore a 5")
+    elif x<5:   
+        print("il numero è minore a 5")
+    
+    else:
+        print("il numero è uguale a 5")
+
+check_value(int(input("inserisci un numero")))
+
+
+#Write a function check_length(), which takes a string as an argument.
+#Using if / else, check if the length of the string is bigger, smaller, or equal to 10 characters
+
+def check_length(x: str): 
+    if len(x)>10:
+        return ("la stringa è > di 10 caratteri")
+    elif len(x)<10:
+        return ("la stringa è < di 10 caratteri")
+    else:
+        return ("la stringa è = a 10 caratteri")
+print(check_length(input("inserisci una stringa")))
