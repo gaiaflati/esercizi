@@ -15,7 +15,7 @@ def majority_element(nums: list[int]):
             print(i)
             return i
     return None
-out=majority_element([2,2,4,5,5,5,5,5])
+out=majority_element([2,2,4,5,6,7,5,5])
 
 
 
