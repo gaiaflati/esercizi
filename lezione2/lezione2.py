@@ -200,6 +200,31 @@ for key in glossary:
 leonardo_dict={"first_name": "leonardo", "last_name": "servetti", "age": 23, "city": "ladispoli"}
 roberta_dict={"first_name": "roberta", "last_name": "giuntini", "age": 25, "city": "ladispoli"}
 people=[antonella_dict,roberta_dict,leonardo_dict]
-print(people)
 for i in people:
     print(i.values())
+
+#6-8. Pets: Make several dictionaries, where each dictionary represents a different pet.
+#In each dictionary, include the kind of animal and the owner’s name. 
+#Store these dictionaries in a list called pets. Next, loop through your list and as
+#you do, print everything you know about each pet. 
+
+dog={"kind": "dog", "owner": "monica"}
+cat={"kind": "cat", "owner": "davide"}
+parrot={"kind": "parrot", "owner": "luca"}
+pets=[dog,cat,parrot]
+for i in pets:
+    print(i.items())
+
+#6-9. Favorite Places: Make a dictionary called favorite_places.
+#Think of three names to use as keys in the dictionary, and store one to three favorite places for each person. 
+#To make this exercise a bit more interesting, ask some friends to name a few of their favorite places. 
+#Loop through the dictionary, and print each person’s name and their favorite places.
+
+favorite_places={"lorenzo": ["giappone","indonesia","kenya"],"oussama": ["marocco","spagna","brasile"], "francisco":["alaska","italia","brasile"]}
+for key in favorite_places:
+    print(key,favorite_places.get(key))
+
+#6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more than one favorite number. 
+#Then print each person’s name along with their favorite numbers.
+
+favorite_number={"gaia": 3, "lorenzo": 7, "matteo": 16, "giulia": 23, "viola": 12}
