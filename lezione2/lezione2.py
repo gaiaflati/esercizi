@@ -134,10 +134,72 @@ for i in guest_list:
 del guest_list[:]
 print(guest_list)
 
+#3-8. Seeing the World: Think of at least five places in the world you’d like to visit.
+#• Store the locations in a list. Make sure the list is not in alphabetical order.
+#• Print your list in its original order. Don’t worry about printing the list neatly; just print it as a raw Python list.
+#• Use sorted() to print your list in alphabetical order without modifying the actual list.
+#• Show that your list is still in its original order by printing it.
+#• Use sorted() to print your list in reverse-alphabetical order without changing the order of the original list.
+#• Show that your list is still in its original order by printing it again.
+#• Use reverse()  to change the order of your list. Print the list to show that its order has changed.
+#• Use reverse() to change the order of your list again. Print the list to show it’s back to its original order.
+#• Use sort() to change your list so it’s stored in alphabetical order. Print the list to show that its order has been changed.
+#• Use sort() to change your list so it’s stored in reverse-alphabetical order.
+#Print the list to show that its order has changed.
 
 
 
+#3-9. Dinner Guests: Working with one of the programs from Exercises 3,
+#use len() to print a message indicating the number of people you’re inviting to dinner.
+print(f"il numero di invitati alla cena è: {len(guest_list)}")
 
 
+#3-10. Every Function: Think of things you could store in a list. 
+#For example, you could make a list of mountains, rivers, countries, cities, languages, or anything else you’d like. 
+#Write a program that creates a list containing these items and then uses each function introduced in this chapter at least once.
 
+languages=["italiano","inglese","francese","spagnolo"]
+languages.pop(2)
+languages.append("portoghese")
+languages.insert(1,"giapponese")
+languages[0].upper
+print(languages)
 
+#6-1. Person: Use a dictionary to store information about a person you know. 
+#Store their first name, last name, age, and the city in which they live.
+#You should have keys such as first_name, last_name, age, and city. Print each piece of information stored in your dictionary.
+
+antonella_dict={"first_name": "antonella", "last_name": "riposati", "age": 64, "city": "ladispoi"}
+print (antonella_dict.values())
+
+#6-2. Favorite Numbers: Use a dictionary to store people’s favorite numbers. 
+#Think of five names, and use them as keys in your dictionary. 
+#Think of a favorite number for each person, and store each as a value in your dictionary.
+#Print each person’s name and their favorite number. For even more fun, poll a few friends and get some actual data for your program.
+
+favorite_number={"gaia": 3, "lorenzo": 7, "matteo": 16, "giulia": 23, "viola": 12}
+for key in favorite_number:
+    print(f"il numero preferito di {key} è: ", favorite_number.get(key))
+
+#6-3. Glossary: A Python dictionary can be used to model an actual dictionary. However, to avoid confusion, let’s call it a glossary.
+#• Think of five programming words you’ve learned about in the previous chapters.
+#Use these words as the keys in your glossary, and store their meanings as values.
+#• Print each word and its meaning as neatly formatted output. 
+#You might print the word followed by a colon and then its meaning, or print the word on one line and then print its meaning indented on a second line. 
+#Use the newline character (\n) to insert a blank line between each word-meaning pair in your output.
+
+glossary={"insert": "inserisce un elemento alla lista specificando l'indice", "pop": "rimuove un elemento della lista specificando l'indice", "append": 
+          "aggiunge un elemento alla fine della lista", "print": "stampa", "upper": "trasforma una stringa in maiuscolo"}
+for key in glossary:
+    print(key, glossary.get(key))
+
+#6-7. People: Start with the program you wrote for Exercise 6-1.
+#Make two new dictionaries representing different people, and store all three dictionaries in a list called people. 
+#Loop through your list of people. As you loop through the list, print everything you know about each person.
+
+leonardo_dict={"first_name": "leonardo", "last_name": "servetti", "age": 23, "city": "ladispoli"}
+roberta_dict={"first_name": "roberta", "last_name": "giuntini", "age": 25, "city": "ladispoli"}
+people=[antonella_dict,roberta_dict,leonardo_dict]
+print(people)
+for i in people:
+    print(i.values())
