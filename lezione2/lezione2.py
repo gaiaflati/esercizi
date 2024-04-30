@@ -146,6 +146,9 @@ print(guest_list)
 #• Use sort() to change your list so it’s stored in alphabetical order. Print the list to show that its order has been changed.
 #• Use sort() to change your list so it’s stored in reverse-alphabetical order.
 #Print the list to show that its order has changed.
+places=["svezia","cuba","giappone","rio","portogallo",]
+print(places)
+print(sorted(places))
 
 
 
@@ -228,3 +231,5 @@ for key in favorite_places:
 #Then print each person’s name along with their favorite numbers.
 
 favorite_number={"gaia": 3, "lorenzo": 7, "matteo": 16, "giulia": 23, "viola": 12}
+
+

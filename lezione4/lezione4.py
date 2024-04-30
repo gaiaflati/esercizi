@@ -196,6 +196,7 @@ out=show_messages(messages)
 #to a new list called sent_messages as it’s printed. After calling the function,
 #print both of your lists to make sure the messages were moved correctly.
 
+
 def send_messages(text_messages):
     sent_messages=[]
     for i in text_messages:
@@ -219,14 +220,35 @@ out=sandwiches(["insalata", "ketchup", "maionese"])
 #All the values must be passed to the function as parameters. 
 #The function then must return a string such as "Eric Crow, age 45, hair brown, weight 67"
 profile={"Gaia": "Flati", "hair":"brown","eyes": "brown","age": 23,"city": "ladispoli"}
-def build_profile(values: dict): #->str
+"""def build_profile(values: dict): #->str
     for key in values:
-        print(f"{key},{values.get()}")
+        print(f"{key},{values.get(key)}")
          
 out=build_profile(profile)
-    
-    
-    
+"""
+def build_profile(first_name, last_name, age, hair, city):
+    profile=f"{first_name} {last_name}, age {age}, hair {hair}, city {city}"
+    return profile
+me=build_profile("Gaia","Flati",23,"Brown","Ladispoli")
+
+#8-14. Cars: Write a function that stores information about a car in a dictionary. 
+#The function should always receive a manufacturer and a model name. 
+#It should then accept an arbitrary number of keyword arguments. 
+#Call the function with the required information and two other name-value pairs, such as a color or an optional feature. 
+#Your function should work for a call like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True) 
+#Print the dictionary that’s returned to make sure all the information was stored correctly. 
+
+def make_car(manufacturer, model, color=None, fuel=None): #->dict
+    return{"manufacturer": manufacturer,"model":model,"color": color,"fuel":fuel}
+car=print(make_car('Fiat','Panda',"blue","Diesel"))
+
+
+#8-15. Printing Models: Put the functions for the example printing_models.py in a separate file called printing_functions.py.
+# Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
+
+
+
+
     
 
 
