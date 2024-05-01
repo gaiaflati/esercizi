@@ -3,7 +3,7 @@
 #inside the function, it should substract the two
 #then return the rsult
 #After you defined it, call the function with some argument
-"""
+
 def substract(x,y):
     return x-y
 print(substract(4,7))
@@ -88,14 +88,11 @@ def add_one_to_list (integers_list):
     print (new_list)
 add_one_to_list([4,6,1,9])
 
-"""
+
 #8-1. Message: Write a function called display_message() 
 #that prints one sentence telling everyone what you are learning about in this chapter. 
 #Call the function, and make sure the message displays correctly.
 
-
-
-"""
 def display_message(x: str):
     return(x)
 print(display_message("sto imparando a usare python"))
@@ -214,18 +211,18 @@ def sandwiches(ingredients: list):
 out=sandwiches(["cipolla", "pomodoro","cheddar"])
 out=sandwiches(["cetriolini", "senape", "bacon"])
 out=sandwiches(["insalata", "ketchup", "maionese"])
-"""
+
 #8-13. User Profile:  Build a profile of yourself by calling build_profile(), 
 #using your first and last names and three other key-value pairs that describe you. 
 #All the values must be passed to the function as parameters. 
 #The function then must return a string such as "Eric Crow, age 45, hair brown, weight 67"
 profile={"Gaia": "Flati", "hair":"brown","eyes": "brown","age": 23,"city": "ladispoli"}
-"""def build_profile(values: dict): #->str
+def build_profile(values: dict): #->str
     for key in values:
         print(f"{key},{values.get(key)}")
          
 out=build_profile(profile)
-"""
+
 def build_profile(first_name, last_name, age, hair, city):
     profile=f"{first_name} {last_name}, age {age}, hair {hair}, city {city}"
     return profile
@@ -245,6 +242,8 @@ car=print(make_car('Fiat','Panda',"blue","Diesel"))
 
 #8-15. Printing Models: Put the functions for the example printing_models.py in a separate file called printing_functions.py.
 # Write an import statement at the top of printing_models.py, and modify the file to use the imported functions.
+
+
 
 
 

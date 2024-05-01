@@ -42,10 +42,57 @@ def random_number(range_number):
             break
         elif guess_number < number:
             guess_number= int(input("hai sbagliato, prova un numero più grande"))
-        elif guess_number >number:
+        elif guess_number > number:
             guess_number= int(input("hai sbagliato, prova con un numero più piccolo"))   
         i+=1
         
 out=random_number(range__number)
+
+#3. E-commerce Shopping Cart:
+#Create a function that defines a product with a name, price, and quantity.
+#Create a function that manages the shopping cart, allowing the user to add, remove, and view products in the cart.
+#The function should calculate the cart total and apply any discounts or taxes.
+#Implement a for loop to iterate over the items in the cart and print detailed information about each product and the total.
+
+def shopping_cart(x):
+    shirt_item= {"name": "shirt", "price": 19.99, "quantity": 1 }
+    skirt_item={"name": "skirt", "price": 9.99, "quantity": 1}
+    trousers_item={"name": "trousers", "price": 25, "quantity": 1}
+    item= input("scegli un articolo tra 'shirt', 'skirt' e 'trousers'. ")
+    add=input("inserisci la quantità")
+    
+    product=[]   #fatto una lista con i prodotti
+    if item=="shirt":
+        product.append(item)
+        shirt_item["quantity"]= add
+    elif item=="skirt":
+        product.append(item)
+        skirt_item["quantity"]= add
+    elif item=="trousers":
+        product.append(item)
+        trousers_item["quantity"]= add
+    
+    prices=[]    #fatto una lista con i prezzi moltiplicati per le quantità
+    if item=="shirt":
+        prices.append(shirt_item["price"])
+        if add!= 1:
+            prices.append(shirt_item["price"*add])
+    elif item=="skirt":
+        prices.append(skirt_item["price"])
+        if add!= 1:
+            prices.append(skirt_item["price"*add])
+    elif item=="trousers":
+        prices.append(trousers_item["price"])
+        if add!= 1:
+            prices.append(trousers_item["price"*add])
+
+#4. Text Analysis:
+#Create a function that reads a text file and counts the number of occurrences of each word.
+#The function should print a report showing the most frequent words and their number of occurrences.
+#You can use a for loop to iterate over the words in the text and a dictionary to store the occurrences.
+#Implement error handling to handle missing files or other input issues.
+
+
+
 
 

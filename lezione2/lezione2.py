@@ -230,6 +230,28 @@ for key in favorite_places:
 #6-10. Favorite Numbers: Modify your program from Exercise 6-2 so each person can have more than one favorite number. 
 #Then print each person’s name along with their favorite numbers.
 
-favorite_number={"gaia": 3, "lorenzo": 7, "matteo": 16, "giulia": 23, "viola": 12}
+favorite_number={"gaia": [3,13] , "lorenzo": [7,31], "matteo": [16,99], "giulia": [23,5], "viola": [12,48]}
+for key in favorite_number:
+    print(f"i numeri preferit di {key} sono: ", favorite_number.get(key))
+
+#6-11. Cities: Make a dictionary called cities. Use the names of three cities as keys in your dictionary. 
+#Create a dictionary of information about each city and include the country that the city is in, its approximate population, 
+#and one fact about that city. The keys for each city’s dictionary should be something like country, population, and fact. 
+#Print the name of each city and all of the information you have stored about it.
+cities : dict = [{"city": "Rome",
+                  "country": "Italy",
+                  "population": "2.873 mln",
+                  "fact": "Rome wasn't always the capital city"},
+                  {"city": "Paris",
+                   "country": "France",
+                   "population": "2,145 mln",
+                   "fact": "The Louvre is the largest museum in the world"},
+                   {"city": "Barcelona",
+                    "country": "Spain",
+                    "population": "1,62 mln",
+                    "fact": "Barcelona has two official languages"}]
+
+for i in cities:
+    print(f"these are the details of {i["city"]}: country={i["country"]}, population={i["population"]}, fact={i["fact"]}.")
 
 
