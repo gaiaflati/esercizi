@@ -53,7 +53,7 @@ out=random_number(range__number)
 #Create a function that manages the shopping cart, allowing the user to add, remove, and view products in the cart.
 #The function should calculate the cart total and apply any discounts or taxes.
 #Implement a for loop to iterate over the items in the cart and print detailed information about each product and the total.
-
+"""
 def shopping_cart(x):
     shirt_item= {"name": "shirt", "price": 19.99, "quantity": 1 }
     skirt_item={"name": "skirt", "price": 9.99, "quantity": 1}
@@ -85,6 +85,7 @@ def shopping_cart(x):
         prices.append(trousers_item["price"])
         if add!= 1:
             prices.append(trousers_item["price"*add])
+"""
 
 #4. Text Analysis:
 #Create a function that reads a text file and counts the number of occurrences of each word.
