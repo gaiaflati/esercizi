@@ -92,6 +92,7 @@ print(gaia)
 print(gimmy)
 """
 
+
 class Animal:
     def __init__(self, name: str, legs: int) -> None:
         self.name=name
@@ -133,4 +134,76 @@ class Menu:
     def __str__(self) -> str:
         pass
 pizza=Menu([pollo, cicoria, pasta])
+
+
+class Person:
+    def __init__(self, 
+                 name: str, 
+                 cognome: str, 
+                 data_di_nascita: str,
+                 genere: str) -> None:
+        self.name: str= name
+        self.cognome: str= cognome
+        self.data_di_nascita: str= data_di_nascita
+        self.genere: str= genere
     
+    def calcola_eta(self) -> int:
+        
+        return 10
+
+persona_1: Person = Person(name="Gaia",
+                           cognome="Flati",
+                           data_di_nascita="13/03/2001",
+                           genere="Femmina")
+
+class Dipendente(Person):
+    def __init__(self,
+                 name: str, 
+                 cognome: str, 
+                 data_di_nascita: str, 
+                 genere: str,
+                 ore_lavorate: int) -> None:
+       
+        super().__init__(name, cognome, data_di_nascita, genere)
+        self.ore_lavorate: int = ore_lavorate
+
+    
+    def calcola_stipendio(self)->float:
+
+        return 500.0
+
+dipendente_1: Dipendente= Dipendente(name="Gaia",
+                                     cognome="Flati",
+                                     data_di_nascita="13/03/2001",
+                                     genere="Femmina",
+                                     ore_lavorate=400)
+
+class Professore(Dipendente):
+
+    def __init__(self, 
+                 name: str, 
+                 cognome: str, 
+                 data_di_nascita: str, 
+                 genere: str, 
+                 ore_lavorate: int,
+                 materia_insegnata: str,
+                 ore_di_lezione: int) -> None:
+        super().__init__(name, cognome, data_di_nascita, genere, ore_lavorate)
+
+        self.materia_insegnata= materia_insegnata
+        self.ore_di_lezione= ore_di_lezione
+
+professore_1: Professore= Professore(name="Gaia",
+                                     cognome="Flati",
+                                     data_di_nascita="13/03/2001",
+                                     genere="Femmina",
+                                     ore_lavorate=400,
+                                     materia_insegnata="matematica",
+                                     ore_di_lezione=65)
+
+print(persona_1.calcola_eta())
+print(dipendente_1.name)
+print(dipendente_1.calcola_eta())
+print(dipendente_1.calcola_stipendio())
+print(dipendente_1.ore_lavorate)
+print(professore_1.ore_di_lezione)
