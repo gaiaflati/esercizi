@@ -37,6 +37,21 @@ sui recinti dello zoo che contengono animali.
 """ 
 
 
+
+class Fence:
+    def __init__(self, area: int, temperature: int, habitat: str) -> None:
+        self.area=area
+        self.temperature=temperature
+        self.habitat=habitat
+        self.list_animals=[]
+        self.area_rimanente=area
+        self.area_tot_animals=0
+        self.animal=None
+
+    
+    def __str__(self) -> str:
+        return f"Fences: \n Fence(area={self.area}, temperature={self.temperature}, habitat={self.habitat})"
+
 class Animal:
     def __init__(self, name: str, species: str, age: int, height: float, width: float, preferred_habitat: int) -> None:
         self.name=name
@@ -47,36 +62,26 @@ class Animal:
         self.preferred_habitat=preferred_habitat
         self.health=round(100* (1/age), 3)
         self.area_animal=round(height*width, 3) #inserire i get
-        self.fence=None
+        self.fence: Fence=None
+
     
     def __str__(self) -> str:
-         #s: str= f"Animal(name={self.name},specie={self.species}, age={self.age})"
-        return f"with animals: \n  Animal(name={self.name},specie={self.species}, age={self.age})"
-
-class Fence:
-    def __init__(self, area: int, temperature: int, habitat: str) -> None:
-        self.area=area
-        self.temperature=temperature
-        self.habitat=habitat
-        self.list_animals=[]
-        self.area_rimanente=area
-        self.area_tot_animals=None
+        for animal in self.fence:
+            return f"with animals: \n  Animal(name={self.name},specie={self.species}, age={self.age})"
     
-    def __str__(self) -> str:
-        return f"Fences: \n Fence(area={self.area}, temperature={self.temperature}, habitat={self.habitat})"
-
 class Zookeper:
     def __init__(self, name: str, surname: str, id: str) -> None:
         self.name=name
         self.surname=surname
         self.id=id
+
     
     def add_animal(self, animal: Animal, fence: Fence):
         if animal and isinstance(animal, Animal) and animal not in fence:
-            if animal.area_animal<= fence.area and animal.preferred_habitat==fence.habitat:   #richiamare con i get
+            if animal.area_animal<= fence.area and animal.preferred_habitat==fence.habitat:   #richiamare con i get e aggiungere gli else
                 fence.list_animals.append(animal)
                 fence.area_rimanente = fence.area-animal.area_animal
-                animal.fence=fence.area_rimanente
+                animal.fence=fence
                 fence.area_tot_animals+=animal.area_animal
     
     def remove_animal(self, animal: Animal, fence: Fence):
@@ -84,34 +89,37 @@ class Zookeper:
              fence.list_animals.remove(animal)
              fence.area+=animal.area_animal
              fence.area_tot_animals-=animal.area_animal
+             animal.fence= None
 
     def feed(self, animal: Animal):
         animal.height+= round((animal.height*2/100), 3)
         animal.width+= round((animal.width*2/100), 3)
-        if (animal.height*animal.width) <= animal.fence:
+        porzione_area_maggiorata=(animal.height*animal.width) - animal.area_animal
+        if porzione_area_maggiorata <= animal.fence.area_rimanente:
             animal.health+= round((animal.health*1)/100, 3)
 
     def clean(self, fence: Fence):
             area_occupata=(fence.area-fence.area_rimanente)
             tempo: float=fence.area_tot_animals/fence.area_rimanente
             if tempo ==0:
-                return area_occupata       
+                return area_occupata   
+            else:
+                return tempo    
     
     def __str__(self) -> str:
         return f"Guardians: \n Zookeper(name={self.name}, surname={self.surname}, ID={self.id})"
     
 
 class Zoo:
-    def __init__(self, fences: Fence, zoo_keepers: Zookeper) -> None:
+    def __init__(self, fences: list [Fence], zoo_keepers: list [Zookeper]) -> None:
         self.fences=fences
         self.zoo_keepers=zoo_keepers 
 
     def describe_zoo(self):
-        a=Zookeper().__str__  
-        b=Fence().__str__
-        c=Animal().__str__
-        return a + b + c
-    
+        for zookeper in self.zoo_keepers:
+            print (f"Guardians: \n Zookeper(name={self.name}, surname={self.surname}, ID={self.id})")
+        for fence in self.fences:
+            print ((f"Fences: \n Fence(area={self.area}, temperature={self.temperature}, habitat={self.habitat})" )+ {Animal().__str__})
 
 
 lorenzo=Zookeper(name='Lorenzo', surname='Maggi', id=1234)
@@ -120,4 +128,8 @@ scoiattolo=Animal(name='Scoiattolo', species='Blabla', age=25, width=3.6, height
 
 
 lorenzo.clean(mondo)
+
+print(Zoo.describe_zoo)
+
+
    
