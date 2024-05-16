@@ -48,9 +48,6 @@ class Fence:
         self.area_tot_animals=0
         self.animal: Animal=None
 
-    
-    def __str__(self) -> str:
-        return f"Fences: \n Fence(area={self.area}, temperature={self.temperature}, habitat={self.habitat})"
 
 class Animal:
     def __init__(self, name: str, species: str, age: int, height: float, width: float, preferred_habitat: int) -> None:
@@ -105,10 +102,6 @@ class Zookeper:
                 return area_occupata   
             else:
                 return tempo    
-    
-    def __str__(self) -> str:
-        return f"Guardians: \n Zookeper(name={self.name}, surname={self.surname}, ID={self.id})"
-    
 
 class Zoo:
     def __init__(self, fences: list [Fence], zoo_keepers: list [Zookeper]) -> None:
@@ -116,27 +109,38 @@ class Zoo:
         self.zoo_keepers=zoo_keepers
 
     def describe_zoo(self):
+        print("Guardians: \n")
         for zookeper in self.zoo_keepers:
-            print (f"Guardians: \n Zookeper(name={zookeper.name}, surname={zookeper.surname}, ID={zookeper.id})")
-        
+            print (f"Zookeper(name={zookeper.name}, surname={zookeper.surname}, ID={zookeper.id})")
+            
+        print("Fences: \n")
         for fence in self.fences:
-            print (f"Fences: \n Fence(area={fence.area}, temperature={fence.temperature}, habitat={fence.habitat})"\
+            print (f"Fence(area={fence.area}, temperature={fence.temperature}, habitat={fence.habitat})" '\n'
                    "with animals: ")
             for animal in fence.list_animals:
                 print(animal)
+            print("##############################")
             
             
 
 lorenzo=Zookeper(name='Lorenzo', surname='Maggi', id=1234)
 mondo=Fence(area=100, temperature=25, habitat='Continent')
+luca=Zookeper(name='luca', surname='cavalleri', id=1111)
+leone=Animal(name='leone', species='Blabla', age=34, width=3.4, height=1.5, preferred_habitat="savana")
+savana=Fence(area=50, temperature=35, habitat='savana')
+tigre=Animal(name='tigre', species='felino', age=10, width=4.1, height=1.5, preferred_habitat="savana")
 
 scoiattolo=Animal(name='Scoiattolo', species='Blabla', age=25, width=3.6, height=1.7, preferred_habitat="Continent")
 lorenzo.add_animal(scoiattolo, mondo)
-a=Zoo([mondo], [lorenzo])
-
-lorenzo.clean(mondo)
+luca.add_animal(tigre,savana)
+a=Zoo([mondo,savana], [lorenzo,luca])
+luca.add_animal(leone,savana)
+luca.feed(leone)
+print(lorenzo.clean(mondo))
+b=Zoo([savana],[luca])
 
 a.describe_zoo()
+
 
 
    
