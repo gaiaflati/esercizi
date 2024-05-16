@@ -49,10 +49,11 @@ import copy
 
 def rimuovi_elementi(lista: list[int], da_rimuovere: dict[int:int]) -> list[int]:
     lista2=[]
+    pass
     # cancella pass e scrivi il tuo codice
-    for i,j in da_rimuovere.items():
-        if i in lista:
-
+    #for i,j in da_rimuovere.items():
+        #if i in lista:
+            
 print(rimuovi_elementi([1, 2, 3, 2, 4], {2: 2}))
 
 
@@ -65,10 +66,7 @@ print(rimuovi_elementi([1, 2, 3, 2, 4], {2: 2}))
 
         
 #Scrivi una funzione che prenda in input una lista di dizionari che rappresentano voti di studenti e aggrega i voti per studente in un nuovo dizionario.
-"""
-print(aggrega_voti([{'nome': 'Alice', 'voto': 90}, {'nome': 'Bob', 'voto': 75}, {'nome': 'Alice', 'voto': 85}]))	
-{'Alice': [90, 85], 'Bob': [75]}
-"""
+
 def aggrega_voti(registro: list[dict]) -> dict[str:list[int]]:
     nuovo_registro={}
 
