@@ -120,8 +120,7 @@ class Zoo:
             for animal in fence.list_animals:
                 print(animal)
             print("##############################")
-            
-            
+
 
 lorenzo=Zookeper(name='Lorenzo', surname='Maggi', id=1234)
 mondo=Fence(area=100, temperature=25, habitat='Continent')
@@ -140,6 +139,11 @@ print(lorenzo.clean(mondo))
 b=Zoo([savana],[luca])
 
 a.describe_zoo()
+      
+luca.remove_animal(tigre,savana)
+a.describe_zoo()
+            
+
 
 
 
