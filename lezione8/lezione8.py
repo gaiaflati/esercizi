@@ -52,7 +52,7 @@ class Rabbit(Animal):
 p= Person(name="Gaia", surname="Flati", cf="FLTGAI01C53H5010", age=23)
 a=Animal(specie="balena", age=26)
 
-"""
+
 
    
 class Room:
@@ -129,6 +129,35 @@ smi.add_room(Room(id="666", floor=3, seats=32))
 smi.add_room(Room(id="333", floor=0, seats=42))
 smi.add_room(Room)
 smi.add_room(None)
+
+"""
+
+def symmetric(tree: list[int]) -> bool:
+    destra=[]
+    i=0
+    for i in range(len(tree)):
+        destra.append[tree[2*i+1]]
+        i+=1
+    sinistra=[]
+    i=0
+    while i<= len(tree):
+        sinistra.append[tree[2*(i+1)]]
+        i+=1
+    if destra==sinistra:
+        return True
+    else:
+        return False
+    
+print(symmetric([1,2,2,3,4,4,3]))
  
 
+def symmetric(tree: list[int]) -> bool:
+    i=0
+    destra=[]
+    for i in range(len(tree)):
+        if tree[2*i+1] == tree [2*(i+1)]:
+            i=
+            return True
+        else:
+            return False
         
