@@ -180,6 +180,7 @@ def valid_sudoku(board: list[list[str]]) -> bool:
 #square_i= 1, square_j=2 -> 5
 #square_i= 2, square_j=0 -> 6
 #square_i= 2, square_j=1 -> 7
+
 #square_i= 2, square_j=2 -> 8
 
 
