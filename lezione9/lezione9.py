@@ -133,6 +133,66 @@ Progettare un sistema di gestione della biblioteca con i seguenti requisiti:
 
 """
 
-class Book:
-    def __init__(self) -> None:
-        pass
+
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.next = next
+        self.val=val
+        
+def reverse_list(head: ListNode) :
+    reversed_list: list[int]= []
+    queue: list[ListNode] = [head]
+    while queue:
+        curr_node = queue.pop(0)
+        if curr_node:
+            reversed_list.append(curr_node.val)
+            queue.append(curr_node.next)
+    return reversed_list[::-1]
+
+
+
+def valid_sudoku(board: list[list[str]]) -> bool:
+    rows: dict[int, list[int]] = {i: [] for i in range(9)}
+    # rows =  {0: [],1: [], ... ,8: []}
+    cols: dict[int,list[int]] = {i: [] for i in range(9)}
+    squares: dict[int,list[int]] = {i: [] for i in range(9)}
+    
+    for i in range(9):
+        for j in range(9):
+            curr_elem: str= board[i][j]
+            if curr_elem != '.':
+                square_i, square_j = i//3, j//3
+                square_index= 3*square_i + square_j
+
+                if curr_elem in rows[i] or curr_elem in cols[j] or curr_elem in squares[square_index]:
+                    return False
+                
+                rows[i].append(curr_elem)
+                cols[j].append(curr_elem)
+
+#square_i= 0, square_j=0 -> 0
+#square_i= 0, square_j=1 -> 1
+#square_i= 0, square_j=2 -> 2
+#square_i= 1, square_j=0 -> 3
+#square_i= 1, square_j=1 -> 4
+#square_i= 1, square_j=2 -> 5
+#square_i= 2, square_j=0 -> 6
+#square_i= 2, square_j=1 -> 7
+#square_i= 2, square_j=2 -> 8
+
+
+
+
+def binary_to_dec(x: str):
+    x: list[str] = list(x)
+    # x-> ["1","0","1","1"]
+
+    num: int = 0
+    for i in range(len(x)):
+        num += int(x[i]) * 2**(len(x)-i-1)
+    return num
+
+print(binary_to_dec("10"))
+

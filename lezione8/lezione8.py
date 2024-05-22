@@ -130,7 +130,7 @@ smi.add_room(Room(id="333", floor=0, seats=42))
 smi.add_room(Room)
 smi.add_room(None)
 
-"""
+
 
 def symmetric(tree: list[int]) -> bool:
     destra=[]
@@ -156,8 +156,31 @@ def symmetric(tree: list[int]) -> bool:
     destra=[]
     for i in range(len(tree)):
         if tree[2*i+1] == tree [2*(i+1)]:
-            i=
+            i=5
             return True
         else:
             return False
         
+def calcola_stipendio(ore_lavorate: int) -> float:
+    # cancella pass e scrivi il tuo codice
+    if ore_lavorate<=40.00:
+        stipendio=ore_lavorate*10.00
+    else:
+        stipendio=400.00+ (ore_lavorate-40.00)*15.00
+    
+    return ore_lavorate
+"""
+
+def seconds_since_noon(ore: int, minuti: int, secondi: int) -> int:
+   
+        secondi_=ore*3600+minuti*60+secondi
+        return secondi_
+seconds_since_noon(1,0,0)
+        
+def time_difference(ore, minuti, secondi, ore_2, minuti_2, secondi_2):
+    orario_1=seconds_since_noon(ore, minuti, secondi)
+    orario_2=seconds_since_noon(ore_2, minuti_2, secondi_2)
+    print (orario_1, orario_2)
+    time= orario_2-orario_1
+    return time
+print(time_difference(1, 0, 0, 3, 15, 30))
