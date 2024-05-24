@@ -185,7 +185,7 @@ def valid_sudoku(board: list[list[str]]) -> bool:
 
 
 
-
+"""
 def binary_to_dec(x: str):
     x: list[str] = list(x)
     # x-> ["1","0","1","1"]
@@ -196,4 +196,5 @@ def binary_to_dec(x: str):
     return num
 
 print(binary_to_dec("10"))
+"""
 

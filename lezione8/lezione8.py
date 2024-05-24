@@ -169,7 +169,7 @@ def calcola_stipendio(ore_lavorate: int) -> float:
         stipendio=400.00+ (ore_lavorate-40.00)*15.00
     
     return ore_lavorate
-"""
+
 
 def seconds_since_noon(ore: int, minuti: int, secondi: int) -> int:
    
@@ -184,3 +184,49 @@ def time_difference(ore, minuti, secondi, ore_2, minuti_2, secondi_2):
     time= orario_2-orario_1
     return time
 print(time_difference(1, 0, 0, 3, 15, 30))
+
+
+
+class LinkedList:
+   
+    def __init__(self, Node: str) -> None:
+        self.Node=Node
+
+        
+def is_palindrome(head: Node) -> list[int]:
+"""
+def merge(nums1, m, nums2, n):
+    for i in nums2:
+        nums1.append[i]
+    if len(nums1)!=m+n:
+        nums1.remove(0)
+    return nums1
+
+merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
+print(nums1)  
+
+ #- push(x: int) -> None: Pushes element x to the top of the stack.
+# pop() -> None Removes the element on the top of the stack and returns it.
+# top() -> None Returns the element on the top of the stack.
+# empty() -> None Returns true if the stack is empty, false otherwise.
+
+class MyStack:
+    def __init__(self, elements=[]):
+        self.elements=elements
+        
+    def push(self, x: int) ->None:
+        for i in self.elements:
+            if i==x:
+                self.elements.append(x)
+
+    def pop(self):
+        return self.elements.pop(-1)
+        
+    def top(self):
+        return self.elements[-1]
+    
+    def empty(self):
+        if len(self.elements)==0:
+            return True
+        else:
+            False
