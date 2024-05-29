@@ -29,5 +29,5 @@ class Gatto(AbcAnimal):
     def verso(self):
         return print("Miao!")
 
-gatto: Gatto= Gatto(nome="micio")
+gatto: Gatto= Gatto(nme="micio")
 gatto.verso()
