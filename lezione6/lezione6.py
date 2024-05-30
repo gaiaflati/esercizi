@@ -207,3 +207,4 @@ print(dipendente_1.calcola_eta())
 print(dipendente_1.calcola_stipendio())
 print(dipendente_1.ore_lavorate)
 print(professore_1.ore_di_lezione)
+

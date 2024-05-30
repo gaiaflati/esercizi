@@ -1,4 +1,4 @@
-"""
+
 class Animal: 
     
     def __init__(self, specie: str, age: int) -> None:
@@ -194,7 +194,7 @@ class LinkedList:
 
         
 def is_palindrome(head: Node) -> list[int]:
-"""
+
 def merge(nums1, m, nums2, n):
     for i in nums2:
         nums1.append[i]
