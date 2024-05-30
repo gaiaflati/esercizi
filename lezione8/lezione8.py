@@ -230,3 +230,107 @@ class MyStack:
             return True
         else:
             False
+
+
+def rimbalzo() -> None:
+    
+    t: int = 0
+    altezza: float = 0.0
+    velocita: float = 100.0
+    rimbalzi: int = 0
+    
+    
+    #dopo ogni secondo -># altezza = altezza + velocità
+                        #velocità = velocità - 96.
+    #Se il nuovo valore che si ottiene per l'altezza è inferiore a 0,
+    #si deve moltiplicare altezza e velocità per -0.5 per 
+    #simulare il rimbalzo. Dunque, per il rimbalzo, si avrà che
+    #altezza= altezza*-0,5 
+    #velocità=velocità*-0,5.
+    
+
+
+
+    altezza= altezza+velocita
+    velocita= velocita - 96
+    print(f"Tempo: {t} Altezza: {altezza}")
+    if altezza<0:
+        altezza*= -0.5
+        velocita*= -0.5
+        rimbalzo+=1
+        print(f"Tempo: {t} Rimbalzo!")
+        t+=1
+    else:
+        altezza= altezza+velocita
+        velocita= velocita - 96
+        print(f"Tempo: {t} Altezza: {altezza}")
+        t+=1
+
+
+
+        def rimbalzo() -> None:
+    
+    t: int = 0
+    altezza: float = 0.0
+    velocita: float = 100.0
+    rimbalzi: int = 0
+    #dopo ogni secondo -># altezza = altezza + velocità
+                        #velocità = velocità - 96.
+    #Se il nuovo valore che si ottiene per l'altezza è inferiore a 0,
+    #si deve moltiplicare altezza e velocità per -0.5 per 
+    #simulare il rimbalzo. Dunque, per il rimbalzo, si avrà che
+    #altezza= altezza*-0,5 
+    #velocità=velocità*-0,5.
+    print(f"Tempo: {t} Altezza: {altezza}")
+    rimbalzo=0
+    while rimbalzo<=5:
+        altezza= altezza+velocita
+        velocita= velocita - 96
+        
+
+
+        if altezza<0:
+            altezza*= -0.5
+            velocita*= -0.5
+            rimbalzo+=1
+            t+=1
+            print(f"Tempo: {t} Rimbalzo!")
+        else:
+            altezza= altezza+velocita
+            velocita= velocita - 96
+            print(f"Tempo: {t} Altezza: {altezza}")
+            t+=1
+
+
+            def rimbalzo() -> None:
+    
+    t: int = 0
+    h: float = 0.0
+    v: float = 100.0
+    r: int = 0
+    
+    print(f"Tempo: {t} Altezza: {h}")
+    while r<5:
+        t+=1    
+        h= h+v
+        v= v - 96
+        
+        if h<0:
+            print(f"Tempo: {t} Rimbalzo!")
+            h=h* -0.5
+            v= v*-0.5
+            r+=1
+
+            t+=1
+            print(f"Tempo: {t} Altezza: {h}")
+            
+        else:
+            print(f"Tempo: {t} Altezza: {h}")
+
+
+"""
+memorizza_file([1100, 20000, 1048576, 512, 5000])
+File di 1100 byte compresso in 880.0 byte e memorizzato. Blocchi usati: 2. Blocchi rimanenti: 998.
+File di 20000 byte compresso in 16000.0 byte e memorizzato. Blocchi usati: 31. Blocchi rimanenti: 967.
+Non è possibile memorizzare il file di 1048576 byte. Spazio insufficiente.
+"""
