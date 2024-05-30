@@ -120,7 +120,7 @@ class Sala:
         self.disponibili=posti_totali
     
     def prenota_posti(self, num_posti): 
-        if self.posti_prenotati<self.posti_totali and ((self.posti_totali-self.posti_prenotati)< num_posti):
+        if self.posti_prenotati<self.posti_totali and ((self.posti_totali-self.posti_prenotati)> num_posti):
             self.posti_prenotati+=num_posti
         else:
             return "Non ci sono posti disponibili"
@@ -131,6 +131,7 @@ class Sala:
             return "Non ci sono più posti disponibili"
         else:
             self.disponibili=self.posti_totali - self.posti_prenotati
+            return self.disponibili
     
 
 class Cinema:
@@ -142,9 +143,8 @@ class Cinema:
     def aggiungi_sala(self, sala: Sala):
         if sala  and isinstance (sala, Sala) and sala not in self.sale:
             self.sale.append(sala)
+           
 
-        
-    
     def prenota_film(self, titolo_film: str, num_posti):
         if titolo_film == self.film.titolo:
             self.sala.prenota_posti(num_posti)
@@ -156,6 +156,64 @@ cartone: Film= Film(titolo="nemo", durata=160)
 sala_1: Sala= Sala(numero_sala=21,film=cartone, posti_totali=23)
 lucciola: Cinema=Cinema(sala=sala_1, film=cartone)
 
-sala_1.prenota_posti(34)
-lucciola.prenota_film(cartone, 45)
-sala_1.posti_disponibili()
+film1 = Film("Matrix", 120)
+sala1 = Sala(1, film1, 100)
+cinema = Cinema(sala1,film1) 
+cinema.aggiungi_sala(sala1)
+print(cinema.prenota_film("Matrix", 10))  
+print(cinema.prenota_film("Matrix", 95))  
+print(cinema.prenota_film("Inception", 10))
+
+
+
+
+#Scrivi un programma in Python che gestisca un magazzino. Il programma deve permettere di aggiungere prodotti al magazzino, 
+#cercare prodotti per nome e verificare la disponibilità di un prodotto.
+
+#Definisci una classe Prodotto con i seguenti attributi:
+# nome (stringa)
+# quantità (intero)
+ 
+#Definisci una classe Magazzino con i seguenti metodi:
+# aggiungi_prodotto(prodotto: Prodotto): aggiunge un prodotto al magazzino.
+# cerca_prodotto(nome: str) -> Prodotto: cerca un prodotto per nome e lo ritorna se esiste.
+# verifica_disponibilità(nome: str) -> str: verifica se un prodotto è disponibile in magazzino.
+ #Test case:
+    #Un gestore del magazzino crea un magazzino e diversi prodotti in diverse quantità. Successivamente, aggiunge i prodotti al magazzino.
+    #Il sistema cerca un prodotto per verificare se esiste nell'inventario.
+    #Il sistema verifica la disponibilità dei prodotti in inventario.
+
+class Prodotto:
+    def __init__(self, nome: str, quantità: int) -> None:
+        self.nome=nome
+        self.quantità=quantità
+
+class Magazzino:
+    def __init__(self, prodotto: Prodotto) -> None:
+        self.prodotto=prodotto
+        self.prodotti: list[Prodotto]= []
+    
+    def aggiungi_prodotto(self, prodotto: Prodotto):
+        if prodotto and isinstance (prodotto, Prodotto) and prodotto not in self.prodotti:
+            self.prodotti.append(prodotto)
+            return self.prodotti
+
+    def cerca_prodotto(self, nome: str):
+        if nome==self.prodotto.nome:
+            return nome
+        else:
+            return "prodotto non nel magazzino"
+
+    def verifica_disponibilità(self, nome: str):
+        for i in self.prodotti:
+            if i.nome==nome:
+                return "prodotto disponibile"
+            
+            else:
+                return "prodotto non disponibile"
+
+prodotto1=Prodotto("fagioli", 2)
+prodotto2=Prodotto("ceci", 1)
+Magazzino1=Magazzino(prodotto1)
+Magazzino1.aggiungi_prodotto(prodotto2)
+print(Magazzino1.cerca_prodotto("fagioli"))
