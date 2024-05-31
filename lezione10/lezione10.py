@@ -196,11 +196,13 @@ class Magazzino:
     def aggiungi_prodotto(self, prodotto: Prodotto):
         if prodotto and isinstance (prodotto, Prodotto) and prodotto not in self.prodotti:
             self.prodotti.append(prodotto)
+            prodotto.quantità+=1
             return self.prodotti
 
     def cerca_prodotto(self, nome: str):
-        if nome==self.prodotto.nome:
-            return nome
+        for i in self.prodotti:
+            if nome==i.nome:
+                return nome
         else:
             return "prodotto non nel magazzino"
 
@@ -215,5 +217,50 @@ class Magazzino:
 prodotto1=Prodotto("fagioli", 2)
 prodotto2=Prodotto("ceci", 1)
 Magazzino1=Magazzino(prodotto1)
-Magazzino1.aggiungi_prodotto(prodotto2)
-print(Magazzino1.cerca_prodotto("fagioli"))
+print(Magazzino1.aggiungi_prodotto(prodotto2))
+print(Magazzino1.cerca_prodotto("ceci"))
+print(Magazzino1.verifica_disponibilità('ceci'))
+
+
+
+#Sviluppa un sistema in Python per la gestione di un catalogo film che permetta di aggiungere, rimuovere e cercare film di un particolare regista. 
+#Il sistema dovrebbe consentire anche di visualizzare tutti i registi e i loro film.
+
+#Classe:
+# MovieCatalog: Gestisce tutte le operazioni legate al catalogo dei film.
+
+#Metodi:
+# add_movie(director_name, movies): Aggiunge uno o più film a un regista specifico nel catalogo. Se il regista non esiste, viene creato un nuovo record.
+# Se il regista esiste, la sua lista di film viene aggiornata.
+
+# remove_movie(director_name, movie_name): Rimuove un film specifico dall'elenco dei film di un regista. Se tutti i film sono rimossi, il regista può essere opzionalmente rimosso dal catalogo.
+
+#list_directors(): Elenca tutti i registi presenti nel catalogo.
+
+# get_movies_by_director(director_name): Restituisce tutti i film di un regista specifico.
+
+# search_movies_by_title(title): Trova tutti i film che contengono una certa parola nel titolo. 
+#Restituisce un elenco dei registi e dei rispettivi film che contengono la parola cercata o un messaggio di errore se nessun film contiene la parola cercata nel titolo.
+
+
+class MovieCatalog:
+    
+    def __init__(self, director_name: str, ) -> None:
+        pass
+
+    def add_movie(self, director_name: str, movies: int):
+        pass
+
+    def remove_movie(self, director_name, movie_name):
+        pass
+
+    def list_directors(self):
+        pass
+
+    def get_movies_by_director(self, director_name):
+        pass
+
+    def search_movies_by_title(self, title):
+        pass
+
+
